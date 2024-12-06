@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Survey Platform</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Add Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Online Survey</h1>
+        <form id="surveyForm">
+            <div class="question">
+                <label>1. What is your name?</label>
+                <input type="text" name="name" required>
+            </div>
+            
+            <div class="question">
+                <label>2. Select your College Type:</label>
+                <select name="collegeType" required>
+                    <option value="">Select College Type</option>
+                    <option value="iit">IIT</option>
+                    <option value="nit">NIT</option>
+                    <option value="iiit">IIIT</option>
+                    <option value="university">University</option>
+                </select>
+            </div>
+
+            <div class="question">
+                <label>3. Enter your College Name:</label>
+                <input type="text" name="collegeName" required>
+            </div>
+
+            <div class="question">
+                <label>4. Which domain will you choose for your career?</label>
+                <select name="domain" id="domainSelect" required>
+                    <option value="Web Development">Web Development</option>
+                    <option value="Cyber Security">Cyber Security</option>
+                    <option value="Data Analysis">Data Analysis</option>
+                    <option value="Machine Learning">Machine Learning</option>
+                    <option value="App Development">App Development</option>
+                    <option value="Blockchain">Blockchain Technology</option>
+                </select>
+            </div>
+
+            <div class="question">
+                <label>5. Would you recommend us to others?</label>
+                <div class="radio-group">
+                    <input type="radio" name="recommend" value="yes" required> Yes
+                    <input type="radio" name="recommend" value="no"> No
+                </div>
+            </div>
+
+            <div class="question">
+                <label>6. Any additional comments?</label>
+                <textarea name="comments" rows="4"></textarea>
+            </div>
+
+            <button type="submit">Submit Survey</button>
+        </form>
+    </div>
+
+    <!-- Overlay and Thank You Message -->
+    <div class="overlay" id="overlay"></div>
+    <div class="thank-you-message" id="thankYouMessage">
+        <div class="success-icon"></div>
+        <h2>Thank You!</h2>
+        <p>Your survey response has been successfully submitted.</p>
+        
+        <!-- Chart Container -->
+        <div class="chart-container">
+            <h3>Domain Selection Statistics</h3>
+            <canvas id="domainChart"></canvas>
+        </div>
+        
+        <button class="new-survey-btn" onclick="location.reload()">Submit Another Response</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
